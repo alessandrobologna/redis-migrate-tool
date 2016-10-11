@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 if [ "$1" = 'migrate' ]; then
 	if [ -n "${CONFIG_URL}" ]
 	then 
