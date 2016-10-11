@@ -12,6 +12,7 @@ if [ "$1" = 'migrate' ]; then
 		exec > /migrate/rmt.conf     # stdout replaced with file.
 		echo "[source]"
 		echo "${SOURCE}" | base64 --decode
+		echo
 		echo "[target]"
 		if [ -n "${REPLICATION_GROUP}" ]
 		then
@@ -26,6 +27,7 @@ if [ "$1" = 'migrate' ]; then
 		then
 			echo "${TARGET}" | base64 --decode
 		fi
+		echo
 		echo "[common]"
 		echo "${COMMON}" | base64 --decode
 		exec 1>&6 6>&-      # Restore stdout and close file descriptor #6.
