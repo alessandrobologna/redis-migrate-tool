@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 if [ "$1" = 'migrate' ]; then
 	if [ -n "${CONFIG_URL}" ]
 	then 
@@ -26,7 +27,7 @@ if [ "$1" = 'migrate' ]; then
 			echo "${TARGET}" | base64 --decode
 		fi
 		echo "[common]"
-		echo ${COMMON}" | base64 --decode
+		echo "${COMMON}" | base64 --decode
 		exec 1>&6 6>&-      # Restore stdout and close file descriptor #6.
 	fi
 	cd /migrate
